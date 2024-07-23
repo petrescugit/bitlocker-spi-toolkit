@@ -1,4 +1,4 @@
-FROM alpine:3.12 AS build
+FROM alpine:3.19 AS build
 
 RUN apk add --update-cache \
     git \
@@ -23,7 +23,7 @@ RUN git clone https://github.com/Aorimn/dislocker.git /dislocker \
 COPY run.sh /tmp/build/
 RUN chmod +x /tmp/build/run.sh
 
-FROM alpine:3.12
+FROM alpine:3.19
 
 RUN apk add --update-cache \
     fuse \
